@@ -4,7 +4,10 @@
 
 - Developing a system that automatically adjusts the size of Kubernetes clusters based on their usage. 
 - The key is to predict when scaling will be necessary based on data about the usage of resources such as CPU and memory.
-- To do this, we'll analyze data, find patterns, and figure out when to increase or decrease resources. 
+- To do this, we'll analyze data, find patterns, and figure out when to increase or decrease resources.
+- Mitigate over and underallocation of resources
+- Increase availability of the service
+- Make the service more efficient.
 
 ## Project Phases
 
