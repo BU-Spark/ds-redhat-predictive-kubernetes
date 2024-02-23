@@ -33,3 +33,13 @@
 ### Collect Data Metrics
 - ```./collect.sh```
     - It collects data metrics every 1 second
+
+## References
+- https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/
+- https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/
+- https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/
+- https://stackoverflow.com/questions/50333650/install-python-package-in-docker-file
+- https://kubernetes.io/docs/concepts/services-networking/service/
+- https://medium.com/@bravinwasike18/how-to-build-and-deploy-a-flask-application-to-kubernetes-cluster-e52d460fcb14
+- https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+- https://github.com/kubernetes-sigs/metrics-server
