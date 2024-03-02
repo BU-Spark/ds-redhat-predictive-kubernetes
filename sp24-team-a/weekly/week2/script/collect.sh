@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DATA_FILE="./data/collected_data.csv"
-INTERVAL=1 # seconds
+DATA_FILE="./data/collected_data_unlimited.csv"
+INTERVAL=${1:-1} # seconds
 
 if [ ! -s $DATA_FILE ]; then
     echo "Timestamp,Type,Name,CPU,Memory,Count" > $DATA_FILE
