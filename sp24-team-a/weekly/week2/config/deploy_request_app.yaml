@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: request-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: request-app
+  template:
+    metadata:
+      labels:
+        app: request-app
+    spec:
+      containers:
+      - name: request-app
+        image: request-app:local #todo: use a docker repository
