@@ -1,0 +1,9 @@
+How to run Prometheus for metric collection:
+
+1. Use prometheus operator: https://prometheus-operator.dev/docs/user-guides/getting-started/
+
+2. Build and run the cluster and the prometheus operator
+
+3. By default the web interface is at http://localhost:9090, check if the operator is running correctly
+
+4. Metrics can be queried via curl, follow a guide like https://medium.com/@aneeshputtur/export-data-from-prometheus-to-csv-b19689d780aas
