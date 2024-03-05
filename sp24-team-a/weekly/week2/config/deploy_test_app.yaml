@@ -35,6 +35,20 @@ spec:
   - port: 5000
     targetPort: 5000
     nodePort: 30007
+    name: web
   selector:
     app: test-app
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: test-app
+  labels:
+    team: frontend
+spec:
+  selector:
+    matchLabels:
+      app: test-app
+  endpoints:
+  - port: web
 
