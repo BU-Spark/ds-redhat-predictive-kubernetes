@@ -1,3 +1,12 @@
-Add your name to the team info page!
+## Team A 
+</br>
+Abir Islam, Bowen Li, Hyunjin Jung, Mark Yang, William Seong
 
-At the end of the semester update this README with information on how to run your project. 
+
+### Mid-Semester Report:
+[Recording](https://drive.google.com/file/d/1dHPYS8ITpSb-bxcDBD59oIq4q0oJA4PB/view?usp=share_link)
+
+[Slides](https://docs.google.com/presentation/d/1cZ2XUgt0m4q9QLORmk9TkzHVYsLIURmfbHlXVnJLh4M/edit?usp=sharing)
+
+
+
