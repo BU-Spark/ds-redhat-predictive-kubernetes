@@ -1,0 +1,15 @@
+apiVersion: webapp.test.com/v1
+kind: Scaling
+metadata:
+  labels:
+    app.kubernetes.io/name: scaling
+    app.kubernetes.io/instance: scaling-sample
+    app.kubernetes.io/part-of: scaling
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: scaling
+  name: scaling-test1
+spec:
+  # TODO(user): Add fields here
+  targetNamespace: default
+  targetDeployment: test-app
+  targetReplicaCount: 2

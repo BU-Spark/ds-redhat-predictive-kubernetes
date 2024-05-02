@@ -1,11 +1,17 @@
-# CS-506-TEMPLATE-base-repo
+# CS-506-Predictive-Kubernetes
 
-If your project has multiple teams add changes (code, deliverables, data, etc.) to your team folder.
+Project Summary:
+This project focuses on developing a predictive resource scaling system for Kubernetes clusters. As organizations increasingly rely on Kubernetes for infrastructure management, optimizing resource utilization becomes crucial for cost-effectiveness and performance. Our project aims to address this need by creating a system that automatically adjusts resource allocation based on anticipated demand, thus improving efficiency and scalability.
 
-Create a new branch from your team branch (ex. branch name: <code>team-a</code>, <code>team-b</code>,...etc.), add changes to your team folder (on the new branch you just created).
+Data Collection: Gathered CPU and memory usage data from local Kubernetes clusters running a sample application. Utilized various tools and scripts for real-time metric collection. Our entire data collection workflow including instructions on how to reproduce our sample data is in the sp24-team-a/weekly/week2 directory.
 
-Open a Pull Request to your team branch (ex. branch name: <code>team-a</code>). Add your TA and TPM as reviewers.  ***Do not delete any team folders.***
+Data Analysis: Conducted extensive analysis to understand application resource usage patterns and develop predictive models. Explored various models and techniques, each of which are documented along with the relevant data sets in the week3 - week8 directories in sp24-team-a/weekly.
 
-At the end of the semester during project wrap up open a final Pull Request to <code>dev</code> from your team branch. 
+Kubernetes Integration: Integrated predictive models into Kubernetes using a hybrid approach of both a Python script and Kubernetes operator. Created custom resources to communicate scaling requirements to Kubernetes operators. This system can be found with the relevant instructions in the sp24-team-a/deliverables/predkube_operator directory.
 
-Full instructions on how to make a PR to a Spark! Repo [here](https://docs.google.com/document/d/1t8vDdMyV3RHuXNxIL4DDs7gXV1c89G1T6Xi69UGilS0/edit?usp=sharing)
+Team Information:
+Abir Islam: aislam99@bu.edu
+Bowen Li: bown@bu.edu
+Hyunjin Jung: hyunjin@bu.edu
+Mark Yang: mdyang@bu.edu
+William Seong: seongw@bu.edu
