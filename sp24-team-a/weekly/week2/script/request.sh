@@ -3,30 +3,52 @@
 INTERVAL=${1:-1}
 
 while true; do
-  # Get current minute
-  MINUTE=$(date +%M)
-  MINUTE=$((10#$MINUTE))
+  # Get current hour
+  HOUR=$(date +%H)
+  HOUR=$((10#$HOUR))
 
-  # Probability: 0~10: 1/6, 10~20: 1/5, 20~30: 1/4, 30~40: 1/3, 40~50: 1/2, 50~60: 1/1
-  if ((MINUTE < 10)); then
-    PROBABILITY=6
-  elif ((MINUTE < 20)); then
+  MAX_PROB=100
+
+  # Probabilities
+  if ((HOUR < 4)); then
     PROBABILITY=5
-  elif ((MINUTE < 30)); then
-    PROBABILITY=4
-  elif ((MINUTE < 40)); then
-    PROBABILITY=3
-  elif ((MINUTE < 50)); then
-    PROBABILITY=2
+  elif ((HOUR < 5)); then
+    PROBABILITY=10
+  elif ((HOUR < 6)); then
+    PROBABILITY=20
+  elif ((HOUR < 7)); then
+    PROBABILITY=40
+  elif ((HOUR < 8)); then
+    PROBABILITY=80
+  elif ((HOUR < 9)); then
+    PROBABILITY=95
+  elif ((HOUR < 10)); then
+    PROBABILITY=70
+  elif ((HOUR < 12)); then
+    PROBABILITY=40
+  elif ((HOUR < 13)); then
+    PROBABILITY=50
+  elif ((HOUR < 14)); then
+    PROBABILITY=30
+  elif ((HOUR < 16)); then
+    PROBABILITY=20
+  elif ((HOUR < 17)); then
+    PROBABILITY=40
+  elif ((HOUR < 19)); then
+    PROBABILITY=50
+  elif ((HOUR < 20)); then
+    PROBABILITY=70
+  elif ((HOUR < 22)); then
+    PROBABILITY=40
   else
-    PROBABILITY=1
+    PROBABILITY=20
   fi
 
-  RANDOM_NUM=$((RANDOM % PROBABILITY))
+  RANDOM_NUM=$((RANDOM % MAX_PROB))
 
-  if [ $RANDOM_NUM -eq 0 ]; then
+  if [ $RANDOM_NUM -lt $PROBABILITY ]; then
     # echo "TEST"
-    curl http://localhost:9999/traffic_test
+    curl http://localhost:9999/traffic_test >> logs.txt 2>/dev/null &
   fi
 
   sleep $INTERVAL

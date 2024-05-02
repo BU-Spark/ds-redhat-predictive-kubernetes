@@ -1,0 +1,70 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.14.0
+  name: scalings.webapp.test.com
+spec:
+  group: webapp.test.com
+  names:
+    kind: Scaling
+    listKind: ScalingList
+    plural: scalings
+    singular: scaling
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: Scaling is the Schema for the scaling API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ScalingSpec defines the desired state of Scaling
+            properties:
+              targetDeployment:
+                description: targetDeployment is the name of the deployment to scale
+                type: string
+              targetNamespace:
+                description: targetNamespace is the name of the namespace that target
+                  exists
+                type: string
+              targetReplicaCount:
+                description: targetReplicaCount is the desired number of replicas
+                  for scaling
+                type: integer
+            required:
+            - targetDeployment
+            - targetNamespace
+            - targetReplicaCount
+            type: object
+          status:
+            description: ScalingStatus defines the observed state of Scaling
+            properties:
+              lastScaled:
+                description: lastScaled is the timestamp when the last scaling action
+                  was performed
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
